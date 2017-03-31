@@ -1,2 +1,2 @@
 # polymorphic-java-inclass
-test
+
