@@ -25,9 +25,7 @@ public class DrawingApp extends JFrame implements ActionListener{ //extends App 
 		File.add(Save);
 		File.add(Quit);
 		bar.add(File);
-		Open.addActionListener(this);
-		Save.addActionListener(this);
-		Quit.addActionListener(this);
+		actions();
 		Container c = getContentPane();
 		c.add(BorderLayout.CENTER, new DrawArea());	
 		JPanel panel = new JPanel(new GridLayout(5,1));
@@ -36,17 +34,58 @@ public class DrawingApp extends JFrame implements ActionListener{ //extends App 
 		panel.add(fRect);
 		panel.add(Ellipse);
 		panel.add(fEllipse);
-		Line.addActionListener(this);
-		Rect.addActionListener(this);
-		fRect.addActionListener(this);
-		Ellipse.addActionListener(this);
-		fEllipse.addActionListener(this);
 		c.add("West",panel);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-	
-	
+	public void actions(){
+		Open.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		Save.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		Quit.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		Line.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		Rect.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		fRect.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		Ellipse.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		fEllipse.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		});
+		
+
+		
+		
+		
+		
+	}
 
 	public static void main(String[] args) {
 		new DrawingApp();
