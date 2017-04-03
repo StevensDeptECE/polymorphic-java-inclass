@@ -2,6 +2,7 @@ package edu.stevens.ee552.draw;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.*;
 import java.io.*;
 
 public class App extends JFrame {
@@ -11,9 +12,17 @@ public class App extends JFrame {
 	Color bgColor;
 	private HashMap<String, ActionListener> actionMap;
 	public App(String title, int w, int h, String[][] menus, Color bgColor) {
+	
 		super(title);
-		setSize(w,h);
-		setBackground(bgColor);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    this.setSize(w,h);
+	    Container c = getContentPane();
+	    c.setBackground(bgColor);
+
+	    JPanel p = new JPanel();
+	    p.setBackground(Color.black);
+	    p.setLayout(new GridLayout(1,4));
+	    
 		//make the file menu etc
 		setVisible(True);
 	}
