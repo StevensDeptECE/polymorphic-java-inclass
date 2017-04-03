@@ -1,4 +1,6 @@
 package edu.stevens.ee552.draw;
+import jaxa.awt.*;
+import javax.swing.*;
 import java.io.*;
 
 public class App extends JFrame {
@@ -27,6 +29,11 @@ public class App extends JFrame {
 				w=valueOf(words[1]);
 			else if (words[0]=="bgColor")
 				bgColor=words[1];
+			//need to make the menu bar and shape selector bar
+			else if (words[0]=="FILE")
+				//Add words[1]=hashmap
+			else if (words[0]=="EDIT")
+				//Add words[1]=hashmap
 		}
 	}
 }
