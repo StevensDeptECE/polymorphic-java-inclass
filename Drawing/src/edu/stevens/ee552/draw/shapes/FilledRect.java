@@ -17,11 +17,11 @@ public class FilledRect extends Shape {
 		if (width > 0 && height > 0)
 			g.fillRect(x1, y1, width, height);
 		if (width < 0 && height > 0)
-			g.fillOval(x1 + width, y1, Math.abs(width), height);
+			g.fillRect(x1 + width, y1, Math.abs(width), height);
 		if (width < 0 && height < 0)
-			g.fillOval(x1 + width, y1 + height, Math.abs(width), Math.abs(height));
+			g.fillRect(x1 + width, y1 + height, Math.abs(width), Math.abs(height));
 		if (width > 0 && height < 0)
-			g.fillOval(x1, y1 + height, width, Math.abs(height));
+			g.fillRect(x1, y1 + height, width, Math.abs(height));
 
 	}
 
