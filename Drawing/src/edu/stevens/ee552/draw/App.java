@@ -22,6 +22,9 @@ public class App extends JFrame {
 	    JPanel p = new JPanel();
 	    p.setBackground(Color.black);
 	    p.setLayout(new GridLayout(1,4));
+	    for (int i-0;i<4;i++){
+	    	JButton b = new JButton();
+	    }
 	    
 		//make the file menu etc
 		setVisible(True);
