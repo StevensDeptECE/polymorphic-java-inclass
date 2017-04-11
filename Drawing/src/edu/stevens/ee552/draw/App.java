@@ -17,24 +17,25 @@ public class App extends JFrame {
 	//public App(String title, int w, int h, Color bgColor , String[][] menus ) {
 	public App(String title, int w, int h, Color bgColor ) {
 		super(title);
+		this.title=title;
 	    this.w=w; this.h=h;
 	    this.bgColor=bgColor;
 	    make_it();
 	}
 	
 	//Constructor to read form a file and make the environment
-	/*
-	public App(String confFile) {
-		FileReader f = new FileReader(confFile);
+	
+	public App(String confFile) throws FileNotFoundException {
+		BufferedReader f = new BufferedReader(new FileReader(confFile));
 		String line;
-		while(line = f.readLine()){
+		while((line = f.readLine()) != null && line.length()!=0){
 			String[] words = line.split("\\s+"); //takes out the problem of extra spaces
 			if (words[0]=="TITLE")
 				this.title=words[1];
 			else if (words[0]=="HEIGHT")
-				this.h=valueOf(words[1]);
+				this.h=Integer.valueOf(words[1]);
 			else if (words[0]=="WIDTH")
-				this.w=valueOf(words[1]);
+				this.w=Integer.valueOf(words[1]);
 			else if (words[0]=="bgColor")
 				this.bgColor = (Color)Color.class.getField(words[1]).get(null);
 				//this.bgColor=words[1];
@@ -46,7 +47,7 @@ public class App extends JFrame {
 
 		}
 		make_it();
-	}   */
+	}
 	
 	private void make_it(){
 		//Makes the window as per the specifications given
@@ -54,10 +55,14 @@ public class App extends JFrame {
 	    this.setSize(w,h);
 	    Container c = getContentPane();
 	    c.setBackground(bgColor);
-
+	    JMenuBar menuBar = new JMenuBar();
+	    this.setJMenuBar(menuBar);
+	    JMenu file=new JMenu("File");
+	    menuBar.add(file);
+	    JMenuItem clear=new JMenuItem("Clear Screen/New");
+	    file.add(clear);
 	    JPanel p = new JPanel();
 	    p.setBackground(Color.YELLOW);
-	    p.setLayout(new GridLayout(1,4));
 	    JLabel l = new JLabel("Choose Shape: ");
 	    p.add(l);
 	    JButton b = new JButton("Line");
@@ -77,3 +82,13 @@ public class App extends JFrame {
 		new App("Test title", 800, 700, Color.WHITE);
 	}
 }
+
+
+/*
+ * 
+FOR MY REFERENCE
+JMenuBar - The actual menu bar
+JMenu - Each category on the menubar (ie. File, Edit, etc)
+JMenuItem - Each item in the JMenu 
+ * 
+ */
