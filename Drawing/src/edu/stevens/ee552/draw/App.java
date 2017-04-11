@@ -16,24 +16,12 @@ public class App extends JFrame {
 	
 	//public App(String title, int w, int h, Color bgColor , String[][] menus ) {
 	public App(String title, int w, int h, Color bgColor ) {
-		//this.title=title;
 		super(title);
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.w=w; this.h=h;
-		//this.setSize(w,h);
-	    //Container c = getContentPane();
 	    this.bgColor=bgColor;
-	    //c.setBackground(bgColor);
-	    //JPanel p = new JPanel();
-	    //p.setBackground(Color.black);
-	    //p.setLayout(new GridLayout(1,4));
-	    //for (int i-0;i<4;i++){
-	    //	JButton b = new JButton();
-	    //}
-		//make the file menu etc
-		//setVisible(True);
 	    make_it();
 	}
+	
 	//Constructor to read form a file and make the environment
 	/*
 	public App(String confFile) {
@@ -62,28 +50,30 @@ public class App extends JFrame {
 	
 	private void make_it(){
 		//Makes the window as per the specifications given
-		//super(title);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setSize(w,h);
 	    Container c = getContentPane();
 	    c.setBackground(bgColor);
 
 	    JPanel p = new JPanel();
-	    p.setBackground(Color.BLUE);
+	    p.setBackground(Color.YELLOW);
 	    p.setLayout(new GridLayout(1,4));
-//	    for (int i=0;i<4;i++){
-//	    	JButton b = new JButton();
-//	    }
-	    JButton b = new JButton("test button");
-	    JLabel l = new JLabel("test label");
-	    p.add(b);
+	    JLabel l = new JLabel("Choose Shape: ");
 	    p.add(l);
-	    this.add(p);
+	    JButton b = new JButton("Line");
+	    p.add(b);
+	    b = new JButton("Ellipse");
+	    p.add(b);
+	    b = new JButton("Rectangle");
+	    p.add(b);
+	    b = new JButton("Rhombus");
+	    p.add(b);
+	    this.add(p,BorderLayout.SOUTH);
 		//make the file menu etc
 		setVisible(true);
 	}
 	
 	public static void main(String[] args){
-		new App("Test title", 500, 700, Color.RED);
+		new App("Test title", 800, 700, Color.WHITE);
 	}
 }
