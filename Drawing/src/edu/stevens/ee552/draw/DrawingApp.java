@@ -19,6 +19,7 @@ public class DrawingApp extends App { // we need a method to repaint image from 
 	private JButton fRect = new JButton("filled Rect");
 	private JButton Ellipse = new JButton("Ellipse");
 	private JButton fEllipse = new JButton("filled Ellipse");
+	private JButton Diamond = new JButton("Diamond");
 	private BufferedImage bufImg=null;
 
 	public DrawingApp() {
@@ -31,12 +32,13 @@ public class DrawingApp extends App { // we need a method to repaint image from 
 		bar.add(File);
 		c.add(BorderLayout.CENTER, new DrawArea());
 		actions();
-		JPanel panel = new JPanel(new GridLayout(5, 1));
+		JPanel panel = new JPanel(new GridLayout(6, 1, 5, 5));
 		panel.add(Line);
 		panel.add(Rect);
 		panel.add(fRect);
 		panel.add(Ellipse);
 		panel.add(fEllipse);
+		panel.add(Diamond);
 		c.add(BorderLayout.WEST, panel);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
@@ -47,7 +49,7 @@ public class DrawingApp extends App { // we need a method to repaint image from 
 		jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );  
 		Open.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			        jfc.showDialog(new JLabel(), "Ñ¡Ôñ"); 
+			        jfc.showDialog(new JLabel(), "Choose"); 
 					if (file==null)
 						return;
 					else
@@ -101,7 +103,7 @@ public class DrawingApp extends App { // we need a method to repaint image from 
 		});
 		Quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+                System.exit(0);
 			}
 		});
 		Line.addActionListener(new ActionListener() {
